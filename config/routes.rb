@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'plants/index'
-  get 'plants/new'
-  get 'plants/show'
-  get 'plants/update'
-  get 'plants/create'
-  get 'plants/destroy'
-  get 'plants/edit'
+
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
