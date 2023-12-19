@@ -1,50 +1,49 @@
 
-<div class="banner">
+  <div class="banner">
     <div class="container">
       <h1>Welcome to Plantopolis</h1>
       <p>Let's find a new green friend</p>
-      <a href="#" class="btn btn-success">Watch the List</a>
+      <%= link_to "Watch the list", plants_path, class: "btn btn-success" %>
     </div>
   </div>
   <div class="container-cards">
     <h2>Top sales</h2>
     <div class="cards">
-      <div class="card-trip">
-        <img>
+      <div class="card-plant">
+        <%= image_tag "https://images.unsplash.com/photo-1446071103084-c257b5f70672?q=80&w=384&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>
         <div>
-          <div>
+          <div style="overflow: hidden; height: 60px" >
             <h2>Suculenta</h2>
             <p>Las plantas suculentas o crasas son aquellas en las que algún órgano está especializado en el almacenamiento de agua en cantidades mayores que las plantas sin esta adaptación. </p>
           </div>
             <h2>$1000</h2>
-            <img >
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
         </div>
       </div>
-      <div class="card-trip">
-        <img>
+      <div class="card-plant">
+        <%= image_tag "https://marielalancioni.com.ar/wp-content/uploads/2022/04/a93cec12-c593-4354-90ae-a5c413fe62c6.jpg" %>
         <div>
-          <div>
+          <div style="overflow: hidden; height: 60px" >
             <h2>Potus</h2>
             <p>El poto, también conocido como potus o pothos, es una planta trepadora ideal para la decoración del hogar.</p>
           </div>
             <h2>$89.99</h2>
-            <img>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
         </div>
       </div>
-      <div class="card-trip">
-        <img >
+      <div class="card-plant">
+        <%= image_tag "https://media.admagazine.com/photos/6511419d5e83245788937f4a/master/pass/tulipanes-cuidados-historia.jpg" %>
         <div>
-          <div>
+          <div style="overflow: hidden; height: 60px" >
             <h2>Tulipan</h2>
             <p>Tulipa es un género de plantas perennes y bulbosas perteneciente a la familia Liliaceae, en el que se incluyen los populares tulipanes, nombre común con el que se designa a todas las especies, híbridos y cultivares de este género</p>
           </div>
             <h2>$89.99</h2>
-            <img>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
         </div>
       </div>
     </div>
   </div>
-  <!-- code a footer -->
   <div class="footer">
     <h2>Nuestros metodo de pago</h2>
     <ul class="list-inline">
