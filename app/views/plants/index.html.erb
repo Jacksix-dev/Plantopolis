@@ -1,9 +1,7 @@
-<ul class='container m-4 d-flex'>
+<%= link_to "+new", 'plants/new'  %>
 <% @plants.each do |plant|%>
-<li class='m-2' ><%= plant.id%></li>
-<li class='m-2'  ><%= plant.name%></li>
-<li class='m-2' ><%= plant.description%></li>
-<%= link_to "Show", plant  %>
-<%= link_to "new", 'plants/new'  %>
+
+<h1><%= plant.name %></h1>
+<p><%= plant.description %></p>
+<%= link_to 'Show', plant, class:'btn btn-primary'%>
 <% end %>
-</ul>
