@@ -1,2 +1,9 @@
-<h1>Plants#index</h1>
-<p>Find me in app/views/plants/index.html.erb</p>
+<ul class='container m-4 d-flex'>
+<% @plants.each do |plant|%>
+<li class='m-2' ><%= plant.id%></li>
+<li class='m-2'  ><%= plant.name%></li>
+<li class='m-2' ><%= plant.description%></li>
+<%= link_to "Show", plant  %>
+<%= link_to "new", 'plants/new'  %>
+<% end %>
+</ul>
