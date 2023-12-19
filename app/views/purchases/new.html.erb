@@ -1,24 +1,11 @@
 <div class="container">
   <h2>Create a new purchase</h2>
 
-  <%= form_with(model: @purchase, url: purchases_path, local: true) do |form| %>
-    <div class="form-group">
-      <%= form.label :product_name %>
-      <%= form.text_field :product_name, class: 'form-control' %>
-    </div>
+  <%= simple_form_for([@plant, @purchase]) do |f| %>
+  <%= f.input :user_id, label: false, input_html: {value: current_user.id, class:"d-none" } %>
+  <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class:"d-none"} %>
+  <!-- Otros campos del formulario -->
+  <%= f.submit 'Submit' %>
+<% end %>
 
-    <div class="form-group">
-      <%= form.label :quantity %>
-      <%= form.number_field :quantity, class: 'form-control', step: 1 %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :total_amount %>
-      <%= form.text_field :total_amount, class: 'form-control', readonly: true %>
-    </div>
-
-    <div class="text-right">
-      <%= form.submit 'Purchase', class: 'btn btn-success' %>
-    </div>
-  <% end %>
 </div>
