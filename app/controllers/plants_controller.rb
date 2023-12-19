@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   def index
-    @plants = Plants.all
+    @plants = Plant.all
   end
 
   def new
