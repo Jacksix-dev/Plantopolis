@@ -1,2 +1,7 @@
-<h1>Plants#show</h1>
-<p>Find me in app/views/plants/show.html.erb</p>
+
+<h1><%= @plant.name %></h1>
+<p><%= @plant.description %></p>
+<%= link_to 'Edit', edit_plant_path, class:'btn btn-primary'%>
+<%= link_to 'Buy', edit_plant_path, class:'btn btn-primary'%>
+
+<%= link_to 'Delete', @plant,class:'btn btn-danger', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

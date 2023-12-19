@@ -8,4 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 User.create!(email: 'f@g', password:'dffdddddd')
-Plant.create!(name: 'Rose', description: 'Beautiful red rose', price: 9.99, user_id: 1)
+
+10.times do
+  Plant.create!(name: 'Rose', description: 'Beautiful red rose', price: 9.99, user_id: 1)
+end
