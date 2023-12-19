@@ -1,2 +1,24 @@
-<h1>Plants#new</h1>
-<p>Find me in app/views/plants/new.html.erb</p>
+<div class="container">
+  <h2>Create a new sale</h2>
+
+  <%= form_with(model: @plant, url: plants_path, local: true) do |form| %>
+    <div class="form-group">
+      <%= form.label :product_name %>
+      <%= form.text_field :product_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :seller %>
+      <%= form.text_field :seller, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit 'Create Sale', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
