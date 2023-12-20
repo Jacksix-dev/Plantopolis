@@ -7,8 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.create!(email: 'f@g', password:'dffdddddd')
+#User.create!(email: 'f@g', password:'dffdddddd')
 
-10.times do
-  Plant.create!(name: 'Rose', description: 'Beautiful red rose', price: 9.99, user_id: 1)
-end
+Plant.create(name: 'Suculenta', description: 'Las plantas suculentas o crasas son aquellas en las que algún órgano está especializado en el almacenamiento de agua en cantidades mayores que las plantas sin esta adaptación.', price: 9.99, user_id:1)
+Plant.create(name: 'Potus', description: 'El poto, también conocido como potus o pothos, es una planta trepadora ideal para la decoración del hogar.', price: 11.5, user_id:1)
+Plant.create(name: 'Tulipán', description: 'Tulipa es un género de plantas perennes y bulbosas perteneciente a la familia Liliaceae, en el que se incluyen los populares tulipanes', price: 8.70, user_id:1)
