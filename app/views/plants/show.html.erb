@@ -1,9 +1,15 @@
-
-<h1><%= @plant.name %></h1>
-<p><%= @plant.description %></p>
-
-<%= link_to 'Edit', edit_plant_path, class:'btn btn-primary' if current_user.id == @plant.user_id %>
-
-<%= link_to 'Buy', "/plants/#{@plant.id}/purchases/new", class:'btn btn-primary' if current_user.id != @plant.user_id %>
-
-<%= link_to 'Delete', plant_path(@plant.id),class:'btn btn-danger' , data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == @plant.user_id %>
+  <div class='container d-flex justify-content-center'>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <%= cl_image_tag plant.photo.key, class: "card-img-top" if @plant.photo.attached? %>
+          <div class="card-body">
+            <h2 class="card-title"><%= @plant.name %></h2>
+            <p class="card-text"><%= @plant.description %></p>
+            <h3 class="card-text">$<%= @plant.price %></h3>
+            <%= link_to 'Edit', edit_plant_path, class:'btn btn-primary' if current_user.id == @plant.user_id %>
+            <%= link_to 'Buy', "/plants/#{@plant.id}/purchases/new", class:'btn btn-primary' if current_user.id != @plant.user_id %>
+            <%= link_to 'Delete', plant_path(@plant.id),class:'btn btn-danger' , data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == @plant.user_id %>
+          </div>
+        </div>
+      </div>
+  </div>
