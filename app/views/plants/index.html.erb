@@ -1,6 +1,8 @@
-<%= link_to "Add a new plant", 'plants/new', class: "btn btn-seccondary" %>
+
+<div class='container'>
+<%= link_to "+ Add a new plant", 'plants/new', class: "btn btn-success mb-2 text-center" %>
+</div>
 <div class="container">
-  <h2>Recently Added</h2>
   <div class="row">
     <% @plants.each do |plant| %>
       <div class="col-md-4 mb-4">
