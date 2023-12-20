@@ -5,6 +5,9 @@
   <%= f.input :user_id, label: false, input_html: {value: current_user.id, class:"d-none" } %>
   <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class:"d-none"} %>
   <!-- Otros campos del formulario -->
+   <p><%= "You are buying " + @plant.description + " for " + @plant.price.to_s %></p>
+
+
   <%= f.submit 'Submit' %>
 <% end %>
 
