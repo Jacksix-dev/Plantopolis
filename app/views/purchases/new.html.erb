@@ -1,14 +1,23 @@
-<div class="container">
-  <h2>Create a new purchase</h2>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Create a new purchase</h2>
 
-  <%= simple_form_for([@plant, @purchase]) do |f| %>
-  <%= f.input :user_id, label: false, input_html: {value: current_user.id, class:"d-none" } %>
-  <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class:"d-none"} %>
-  <!-- Otros campos del formulario -->
-   <p><%= "You are buying " + @plant.description + " for " + @plant.price.to_s %></p>
+      <%= simple_form_for([@plant, @purchase]) do |f| %>
+        <div class="form-group">
+          <%= f.input :user_id, label: false, input_html: {value: current_user.id, class: "d-none form-control"} %>
+        </div>
+        <div class="form-group">
+          <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class: "d-none form-control"} %>
+        </div>
+        <!-- Otros campos del formulario -->
 
+        <p><%= "You are buying " + @plant.description + " for " + @plant.price.to_s %></p>
 
-  <%= f.submit 'Submit' %>
-<% end %>
-
+        <div class="text-center">
+          <%= f.submit 'Submit', class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
