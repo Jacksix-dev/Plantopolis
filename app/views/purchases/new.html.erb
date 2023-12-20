@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Create a new purchase</h2>
+
+  <%= simple_form_for([@plant, @purchase]) do |f| %>
+  <%= f.input :user_id, label: false, input_html: {value: current_user.id, class:"d-none" } %>
+  <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class:"d-none"} %>
+  <!-- Otros campos del formulario -->
+  <%= f.submit 'Submit' %>
+<% end %>
+
+</div>
