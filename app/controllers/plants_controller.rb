@@ -19,6 +19,7 @@ before_action :set_plant, only:[:show, :edit , :update, :destroy]
 
   def create
     @plant = Plant.new(plant_params)
+    @plant.user = current_user
     @plant.save
     if @plant.save
       redirect_to plants_path
@@ -39,7 +40,7 @@ before_action :set_plant, only:[:show, :edit , :update, :destroy]
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :price, :user_id)
+    params.require(:plant).permit(:name, :description, :price, :photo)
   end
   def set_plant
     @plant = Plant.find(params[:id])
