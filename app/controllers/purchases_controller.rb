@@ -4,8 +4,9 @@ class PurchasesController < ApplicationController
   end
 
   def new
-    @purchase = Purchase.new
+  @purchase = Purchase.new
     @plant = Plant.find(params[:plant_id])
+
   end
 
   def create

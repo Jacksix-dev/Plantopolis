@@ -1,7 +1,9 @@
 
 <h1><%= @plant.name %></h1>
 <p><%= @plant.description %></p>
-<%= link_to 'Edit', edit_plant_path, class:'btn btn-primary'%>
-<%= link_to 'Buy', "/plants/#{@plant.id}/purchases/new", class:'btn btn-primary'%>
 
-<%= link_to 'Delete', @plant,class:'btn btn-danger', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%= link_to 'Edit', edit_plant_path, class:'btn btn-primary' if current_user.id == @plant.user_id %>
+
+<%= link_to 'Buy', "/plants/#{@plant.id}/purchases/new", class:'btn btn-primary' if current_user.id != @plant.user_id %>
+
+<%= link_to 'Delete', plant_path(@plant.id),class:'btn btn-danger' , data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == @plant.user_id %>

@@ -29,7 +29,7 @@ before_action :set_plant, only:[:show, :edit , :update, :destroy]
 
   def destroy
     @plant.destroy
-    redirect_to plants_path
+    redirect_to plants_path, status: :see_other
   end
 
   def edit
