@@ -3,11 +3,9 @@
   <%= f.input :description %>
   <%= f.input :price, as: :integer%>
   <%= f.input :photo, as: :file %>
- <%= f.button :submit, "Create Plant", class: "btn-success" %>
+<div class="container d-flex justify-content-between">
+<%= f.button :submit, "Create Plant", class: "btn-success" %>
+  <%= link_to "<<-- Back home", '/', class: "btn btn-secondary mb-2" %>
+  <%= link_to "<- Back to List", plants_path, class: "btn btn-primary mb-2" %>
+</div>
 <% end %>
-<div class='container'>
-<%= link_to "<<-- Back home", '/', class: "btn btn-secondary mb-2 text-center" %>
-</div>
-<div class='container'>
-<%= link_to "<<-- Back to List", plants_path, class: "btn btn-primary mb-2 text-center" %>
-</div>
