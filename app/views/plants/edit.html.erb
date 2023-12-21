@@ -1,6 +1,10 @@
 <%= simple_form_for @plant do |f| %>
-  <%= f.input :name %>
+   <%= f.input :name, label: "Plant Name", placeholder: "Enter plant name"%>
   <%= f.input :description %>
-  <%= f.input :price %>
- <%= f.button :submit, 'Update Plant' %>
+  <%= f.input :price, as: :integer%>
+  <%= f.input :photo, as: :file %>
+ <%= f.button :submit, "Create Plant", class: "btn-success" %>
+ <div class='container'>
+<%= link_to "Cancel Edit", plant_path, class: "btn btn-warning mb-2 text-center" %>
+</div>
 <% end %>

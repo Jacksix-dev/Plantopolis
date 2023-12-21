@@ -1,8 +1,7 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="text-center">Your Shopping</h2>
-
+      <h2 class="text-center">Your Shopping Bag</h2>
       <ul class="list-group">
         <% @purchases.each_with_index do |purchase, index| %>
           <li class="list-group-item">
@@ -10,6 +9,9 @@
           </li>
         <% end %>
       </ul>
+      <div class='container'>
+        <%= link_to "Continue Shopping", plants_path, class: "btn btn-success mb-2 text-center" %>
+      </div>
     </div>
   </div>
 </div>
