@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   def index
     @purchases = Purchase.where(user: current_user)
+    @plants = Plant.all
   end
 
   def new
@@ -12,6 +13,8 @@ class PurchasesController < ApplicationController
   def create
     @purchase = Purchase.new(purchase_params)
     @plant = Plant.find(params[:plant_id])
+    @purchase.purchase_date = Time.now
+
     if @purchase.save
       redirect_to plant_purchases_path(@plant)
     else
