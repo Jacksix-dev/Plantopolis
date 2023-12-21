@@ -2,6 +2,9 @@ class PlantsController < ApplicationController
 before_action :set_plant, only:[:show, :edit , :update, :destroy]
   def index
     @plants = Plant.all
+    if params[:query].present?
+      @plants = @plants.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def new
