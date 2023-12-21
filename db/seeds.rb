@@ -16,7 +16,7 @@ file3 = URI.open("https://img.freepik.com/fotos-premium/tulipanes-rojos-maceta-m
 tulipan.photo.attach(io: file3, filename: "tulipan.png", content_type: "image/png")
 tulipan.save
 
-cactus = Plant.create(name: 'Cactus', description: 'Cactaceae, las cactáceas, conocidas como cactus o cactos, es una familia de plantas originarias de América. Sin embargo, hay una excepción, Rhipsalis baccifera, que está extendida en África tropical, Madagascar y Ceilán', price: 5, user_id:1)
+cactus = Plant.create(name: 'Cactus', description: 'Cactaceae, las cactáceas, conocidas como cactus o cactos, es una familia de plantas originarias de América. ', price: 5, user_id:1)
 file4 = URI.open("https://pibadesign.com/wp-content/uploads/2022/09/cactus-blanca.jpg")
 cactus.photo.attach(io: file4, filename: "cactus.png", content_type: "image/png")
 cactus.save
@@ -26,7 +26,7 @@ file5 = URI.open("https://http2.mlstatic.com/D_NQ_NP_749790-MLA43452877560_09202
 cala.photo.attach(io: file5, filename: "cala.png", content_type: "image/png")
 cala.save
 
-calendula =  Plant.create(name: 'Calendula', description: 'Calendula, llamado comúnmente caléndula o margarita, es un género de entre 12 a 20 especies de hierbas anuales o perennes de la familia de las asteráceas, nativas de la región mediterránea y el Asia Menor.', price: 13, user_id:2)
+calendula =  Plant.create(name: 'Calendula', description: 'Calendula, llamado comúnmente caléndula o margarita, es un género de entre 12 a 20 especies de hierbas anuales o perennes', price: 13, user_id:2)
 file6 = URI.open("https://media.verdecora.es/1216239-large_default/planta-calendula-en-flor-maceta-11cm.jpg")
 calendula.photo.attach(io: file6, filename: "calendula.png", content_type: "image/png")
 calendula.save
@@ -36,12 +36,12 @@ file7 = URI.open("https://floresmaru.com.ar/wp-content/uploads/2019/08/jazmines-
 jazmin.photo.attach(io: file7, filename: "jazmin.png", content_type: "image/png")
 jazmin.save
 
-margarita = Plant.create(name: 'Margarita', description: 'La margarita (Bellis perennis), es una planta herbácea de la familia de las asteráceas (Asteraceae) muy utilizada a efectos decorativos mezclada con el césped, por sus colores y su resistencia a la siega.', price: 6.50, user_id:2)
+margarita = Plant.create(name: 'Margarita', description: 'La margarita (Bellis perennis), es una planta herbácea de la familia de las asteráceas (Asteraceae) muy utilizada a efectos decorativos mezclada con el césped', price: 6.50, user_id:2)
 file8 = URI.open("https://verdecora.es/1244907-medium_default/margarita-blanca.jpg")
 margarita.photo.attach(io: file8, filename: "margarita.png", content_type: "image/png")
 margarita.save
 
-monstera = Plant.create(name: 'Monstera', description: 'Monstera deliciosa, llamada comúnmente cerimán o costilla de Adán, es una especie de planta trepadora de la familia Araceae, endémica de selvas tropicales, que se distribuye desde el centro y sur de México hasta el norte de Argentina.', price: 9.75, user_id:2)
+monstera = Plant.create(name: 'Monstera', description: 'Monstera deliciosa, llamada comúnmente cerimán o costilla de Adán, es una especie de planta trepadora de la familia Araceae, endémica de selvas tropicales', price: 9.75, user_id:2)
 file9 = URI.open("https://almanordica.com.ar/wp-content/uploads/2020/06/Monstera-tamano-M.jpg")
 monstera.photo.attach(io: file9, filename: "monstera.png", content_type: "image/png")
 monstera.save
