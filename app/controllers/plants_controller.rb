@@ -40,6 +40,11 @@ before_action :set_plant, only:[:show, :edit , :update, :destroy]
 
   end
 
+  def user_plants
+    @plants = Plant.all.select { |plant| plant.user_id == current_user.id }
+
+  end
+
   private
 
   def plant_params
