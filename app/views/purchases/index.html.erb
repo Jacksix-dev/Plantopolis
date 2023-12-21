@@ -2,13 +2,25 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <h2 class="text-center">Your Shopping Bag</h2>
-      <ul class="list-group">
-        <% @purchases.each_with_index do |purchase, index| %>
-          <li class="list-group-item">
-            <%= "#{index + 1}. #{purchase.plant.name}" %>
-          </li>
-        <% end %>
-      </ul>
+
+      <% @purchases.each_with_index do |purchase, index| %>
+        <div class="card mb-2">
+          <div class="card-body">
+            <h6 class="card-title"><%= "#{index + 1}. #{purchase.plant.name}" %></h6>
+            <p class="card-text">
+              <span class="float-left">
+                <% if purchase.purchase_date.present? %>
+                  Purchased on: <%= purchase.purchase_date.strftime('%Y-%m-%d %H:%M:%S') %>
+                <% else %>
+                  Purchased on: N/A
+                <% end %>
+              </span>
+            </p>
+            <%= cl_image_tag purchase.plant.photo.key, class: "card-img-top" if purchase.plant.photo.attached? %>
+          </div>
+        </div>
+      <% end %>
+
       <div class='container'>
         <%= link_to "Continue Shopping", plants_path, class: "btn btn-success mb-2 text-center" %>
       </div>
