@@ -71,8 +71,6 @@ file4 = URI.open("https://pibadesign.com/wp-content/uploads/2022/09/cactus-blanc
 cactus.photo.attach(io: file4, filename: "cactus.png", content_type: "image/png")
 cactus.save
 
-
-
 rosa = Plant.create(name: 'Rosa', description: 'El género Rosa está compuesto por un conocido grupo de arbustos generalmente espinosos y floridos representantes principales de la familia de las rosáceas', price: 5.25, user_id:2)
 file10 = URI.open("https://www.clarin.com/2023/10/27/AWgT64hiP_1200x0__1.jpg")
 rosa.photo.attach(io: file10, filename: "rosa.png", content_type: "image/png")
