@@ -1,18 +1,18 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="text-center">Your Shopping Bag</h2>
+      <h2 class="text-center">Tu Bolsa de Compras</h2>
 
-      <% @purchases.each_with_index do |purchase, index| %>
+      <% @purchases.reverse_each.with_index(1) do |purchase, index| %>
         <div class="card mb-2">
           <div class="card-body">
-            <h6 class="card-title"><%= "#{index + 1}. #{purchase.plant.name}" %></h6>
+            <h6 class="card-title"><%= "#{index}. #{purchase.plant.name}" %></h6>
             <p class="card-text">
               <span class="float-left">
                 <% if purchase.purchase_date.present? %>
-                  Purchased on: <%= purchase.purchase_date.strftime('%Y-%m-%d %H:%M:%S') %>
+                  Comprado el: <%= purchase.purchase_date.strftime('%Y-%m-%d %H:%M:%S') %>
                 <% else %>
-                  Purchased on: N/A
+                  Comprado el: N/A
                 <% end %>
               </span>
             </p>
@@ -22,7 +22,7 @@
       <% end %>
 
       <div class='container'>
-        <%= link_to "Continue Shopping", plants_path, class: "btn btn-success mb-2 text-center" %>
+        <%= link_to "Continuar Comprando", plants_path, class: "btn btn-success mb-2 text-center" %>
       </div>
     </div>
   </div>
