@@ -6,8 +6,12 @@
   <%= f.input :photo, as: :file, input_html: { class: "custom-file-input" } %>
 <div class="button-container">
 <%= f.button :submit, "Create Plant", class: "btn-success" %>
-  <%= link_to "<<-- Back home", '/', class: "btn btn-secondary" %>
-  <%= link_to "<- Back to List", plants_path, class: "btn btn-primary" %>
+    <%= link_to '/', class: 'btn btn-secondary mb-2' do %>
+      <i class="fas fa-home"></i> Back home
+    <% end %>
+    <%= link_to plants_path, class: 'btn btn-primary mb-2 text-center' do %>
+      <i class="fas fa-chevron-left"></i> Back to List
+    <% end %>
 </div>
 <% end %>
 </div>

@@ -22,7 +22,9 @@
       <% end %>
 
       <div class='container'>
-        <%= link_to "Continuar Comprando", plants_path, class: "btn btn-success mb-2 text-center" %>
+        <%= link_to plants_path, class: 'btn btn-success mb-2 text-center' do %>
+          <i class="fas fa-cart-arrow-down"></i> Continuar Comprando
+        <% end %>
       </div>
     </div>
   </div>

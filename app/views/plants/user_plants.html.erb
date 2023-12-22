@@ -7,8 +7,10 @@
             <h2 class="card-title"><%= plant.name %></h2>
             <p class="card-text"><%= plant.description %></p>
             <h3 class="card-text">$<%= plant.price %></h3>
-            <%= link_to "More details", plant, class: "btn btn-primary" %>
-          </div>
+            <%= link_to plant, class: 'btn btn-primary' do %>
+             <i class="fas fa-info-circle"></i> More details
+            <% end %>
+           </div>
         </div>
       </div>
     <% end %>
