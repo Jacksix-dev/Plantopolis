@@ -11,8 +11,12 @@
   </div>
 </div>
 <div class="container d-flex justify-content-between">
-  <%= link_to "<<-- Back home", '/', class: "btn btn-secondary mb-2" %>
-  <%= link_to "+ Add a new plant", 'plants/new', class: "btn btn-success mb-2" %>
+<%= link_to '/', class: 'btn btn-secondary mb-2' do %>
+  <i class="fas fa-home"></i> Back home
+<% end %>
+  <%= link_to 'plants/new', class: 'btn btn-success mb-2' do %>
+  <i class="fas fa-plus-circle"></i> Add a new plant
+<% end %>
 </div>
 <div class="container">
 
@@ -27,7 +31,9 @@
             <h2 class="card-title"><%= plant.name %></h2>
             <p class="card-text"><%= plant.description %></p>
             <h3 class="card-text">$<%= plant.price %></h3>
-            <%= link_to "More details", plant, class: "btn btn-primary" %>
+            <%= link_to plant, class: 'btn btn-primary' do %>
+             <i class="fas fa-info-circle"></i> More details
+            <% end %>
           </div>
         </div>
       </div>
