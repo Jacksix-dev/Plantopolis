@@ -1,5 +1,7 @@
-  <div class='container'>
-    <%= link_to "<<-- Back To List", plants_path, class: "btn btn-secondary mb-2 text-center" %>
+<div class='container'>
+    <%= link_to plants_path, class: 'btn btn-primary mb-2 text-center' do %>
+      <i class="fas fa-chevron-left"></i> Back to List
+    <% end %>
   </div>
   <div class='container d-flex justify-content-center'>
       <div class="col-md-4 mb-4">
@@ -9,10 +11,16 @@
             <h2 class="card-title"><%= @plant.name %></h2>
             <p class="card-text"><%= @plant.description %></p>
             <h3 class="card-text">$<%= @plant.price %></h3>
-            <%= link_to 'Edit', edit_plant_path, class:'btn btn-primary' if current_user.id == @plant.user_id %>
-            <%= link_to 'Buy', "/plants/#{@plant.id}/purchases/new", class:'btn btn-primary' if current_user.id != @plant.user_id %>
-            <%= link_to 'Delete', plant_path(@plant.id),class:'btn btn-danger' , data: {turbo_method: :delete} if current_user.id == @plant.user_id %>
+            <%= link_to edit_plant_path, class: 'btn btn-primary' do %>
+             <i class="fas fa-edit"></i> Edit
+            <% end if current_user.id == @plant.user_id %>
+            <%= link_to "/plants/#{@plant.id}/purchases/new", class: 'btn btn-success' do %>
+              <i class="fas fa-shopping-cart"></i> Buy
+            <% end if current_user.id != @plant.user_id %>
+            <%= link_to plant_path(@plant.id), class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to permanently delete this plant?' } do %>
+              <i class="fas fa-trash-alt"></i> Delete
+            <% end if current_user.id == @plant.user_id %>
           </div>
         </div>
       </div>
-  </div>
+</div>
