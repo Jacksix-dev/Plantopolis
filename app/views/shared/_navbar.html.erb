@@ -17,10 +17,10 @@
           <li class="nav-item">
             <%= link_to "My cart", "/plants/cart/purchases", class: "nav-link" %>
           </li>
-              <% if @user %>
-             <%= link_to 'View User Plants', plants_user_path(@user) %>
-              <% else %>
-  <!-- Handle the case where @user is nil -->
+              <% if current_user %>
+              <li class="nav-item">
+                  <%= link_to 'My Plants', plants_user_path(current_user),class: "nav-link" %>
+              </li>
               <% end %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
