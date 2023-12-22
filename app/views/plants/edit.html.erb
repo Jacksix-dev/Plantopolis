@@ -1,9 +1,9 @@
+<div class="center-form">
 <%= simple_form_for @plant do |f| %>
    <%= f.input :name, label: "Plant Name", placeholder: "Enter plant name"%>
   <%= f.input :description %>
   <%= f.input :price, as: :integer%>
-  <%= f.input :photo, as: :file %>
- <%= f.button :submit, "Create Plant", class: "btn-success" %>   <%= link_to "Cancel Edit", plant_path, class: "btn btn-warning mb-2 text-center" %>
+  <%= f.input :photo, as: :file, input_html: { class: "custom-file-input" } %>
+ <%= f.button :submit, "Edit Plant", class: "btn-success" %>   <%= link_to "Cancel Edit", plant_path, class: "btn btn-warning " %>
 <% end %>
-<div>
 </div>
