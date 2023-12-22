@@ -4,7 +4,6 @@
       <div class="card-purchase">
         <div class="card-body text-center"> <!-- Agregado text-center aquí -->
           <h2 class="card-title">Create a new purchase</h2>
-
           <%= simple_form_for([@plant, @purchase]) do |f| %>
             <div class="form-group">
               <%= f.input :user_id, label: false, input_html: {value: current_user.id, class: "d-none form-control"} %>
@@ -13,14 +12,11 @@
               <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class: "d-none form-control"} %>
             </div>
             <!-- Otros campos del formulario -->
-
             <p class="card-text"><%= "You are buying " + @plant.name + " for $" + @plant.price.to_s %></p>
-
             <div class="text-center">
-              <%= f.submit 'Confirm Buy', class: 'btn btn-success' %>
+              <%= f.submit 'Confirm Buy', class: 'btn btn-success' %> <%= link_to " Cancel buy", plant_path(@plant), class: "btn btn-danger" %>
             </div>
           <% end %>
-              <%= link_to " Cancel buy", plant_path(@plant), class: "btn btn-danger mb-2 text-center" %>
         </div>
       </div>
     </div>
