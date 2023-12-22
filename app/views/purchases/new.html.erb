@@ -1,8 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card-purchase">
-        <div class="card-body text-center"> <!-- Agregado text-center aquí -->
+        <div class="card-body text-center">
           <h2 class="card-title">Create a new purchase</h2>
           <%= simple_form_for([@plant, @purchase]) do |f| %>
             <div class="form-group">
@@ -11,10 +17,9 @@
             <div class="form-group">
               <%= f.input :plant_id, label: false, input_html: {value: params[:plant_id], class: "d-none form-control"} %>
             </div>
-            <!-- Otros campos del formulario -->
             <p class="card-text"><%= "You are buying " + @plant.name + " for $" + @plant.price.to_s %></p>
             <div class="text-center">
-              <%= f.submit 'Confirm Buy', class: 'btn btn-success' %> <%= link_to " Cancel buy", plant_path(@plant), class: "btn btn-danger" %>
+              <%= f.submit 'Confirm Purchase', class: 'btn btn-success' %> <%= link_to " Cancel purchase", plant_path(@plant), class: "btn btn-danger" %>
             </div>
           <% end %>
         </div>
@@ -22,3 +27,13 @@
     </div>
   </div>
 </div>
+
+<div class="container mt-3">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Investment Opportunity!</strong> Explore the latest trends in cryptocurrencies. Invest wisely!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+</body>
+</html>
